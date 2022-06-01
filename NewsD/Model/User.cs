@@ -10,7 +10,7 @@ public class User
     public DateTime CreationDate { get; set; }
     public DateTime LastUpdate { get; set; }
     public UserRole Role { get; set; }
-    public News[]? News { get; set; }
+    public IEnumerable<News>? News { get; set; }
 }
 
 public enum UserRole

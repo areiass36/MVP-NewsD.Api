@@ -34,6 +34,6 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(u => u.Role)
                .HasColumnName("Role");
 
-        builder.Ignore(u => u.News);
+        builder.HasMany(u => u.News).WithOne(n => n.Creator).HasForeignKey(n => n.CreatorId);
     }
 }
