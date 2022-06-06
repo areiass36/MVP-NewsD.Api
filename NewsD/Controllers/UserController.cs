@@ -1,8 +1,11 @@
+using System.Security.Policy;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NewsD.DataAccess;
 using NewsD.DataContracts;
+using NewsD.Model;
+using static BCrypt.Net.BCrypt;
 
 namespace NewsD.Controllers;
 
@@ -29,13 +32,25 @@ public class UserController : ControllerBase
     }
 
     [HttpPost]
+    [Route("login")]
+    public async Task<IActionResult> LoginUser([FromBody] DataContracts.UserRequest userRequest)
+    {
+        var user = await _context.Users!.SingleOrDefaultAsync(u => u.Email == userRequest.Email);
+
+        if (user is not null && Verify(userRequest.Password, user.Password))
+            return Ok(_mapper.Map<UserResponse>(user));
+
+        return BadRequest("Email ou senha errados");
+    }
+
+    [HttpPost]
     public async Task<IActionResult> CreateUser([FromBody] DataContracts.UserRequest userContract)
     {
         var user = _mapper.Map<Model.User>(userContract);
 
         var exists = await _context.Users!.CountAsync(u => u.Email == user.Email) >= 1;
 
-        if (exists) return BadRequest("User with given email already exists");
+        if (exists) return BadRequest("Já existe um usuário cadastrado com esse email");
 
         await _context.Users!.AddAsync(user);
         await _context.SaveChangesAsync();

@@ -60,3 +60,5 @@
 /home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
 /home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD/bin/Debug/net6.0/System.IO.Hashing.dll
 /home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD/bin/Debug/net6.0/System.Memory.Data.dll
+/home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD/bin/Debug/net6.0/BCrypt.Net-Next.dll

@@ -1,0 +1,5 @@
+/home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD.Database/obj/Debug/net6.0/NewsD.Database.csproj.AssemblyReference.cache
+/home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD.Database/obj/Debug/net6.0/NewsD.Database.GeneratedMSBuildEditorConfig.editorconfig
+/home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD.Database/obj/Debug/net6.0/NewsD.Database.AssemblyInfoInputs.cache
+/home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD.Database/obj/Debug/net6.0/NewsD.Database.AssemblyInfo.cs
+/home/mark/College/FinalProject/Mvp/NewsD.Api/NewsD.Database/obj/Debug/net6.0/NewsD.Database.csproj.CoreCompileInputs.cache

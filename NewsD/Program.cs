@@ -2,7 +2,6 @@ using NewsD.DataAccess;
 using NewsD.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
 var services = builder.Services;
 
 services.AddControllers();
@@ -12,10 +11,12 @@ services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();
 
+app.UseCors(_ => _.AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .AllowAnyOrigin());
+
+app.UseAuthentication();
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
